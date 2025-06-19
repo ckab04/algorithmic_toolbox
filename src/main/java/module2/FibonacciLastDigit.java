@@ -1,4 +1,4 @@
-// package module2;
+//package module2;
 
 import java.math.BigInteger;
 import java.util.*;
@@ -21,9 +21,9 @@ public class FibonacciLastDigit {
     }
     
     public static void main(String[] args) {
-        // Scanner scanner = new Scanner(System.in);
-        // int n = scanner.nextInt();
-        int n = 239;
+        Scanner scanner = new Scanner(System.in);
+        int n = scanner.nextInt();
+        //int n = 239;
         long c = getFibonacciLastDigitNaive(n);
         System.out.println(c);
     }
