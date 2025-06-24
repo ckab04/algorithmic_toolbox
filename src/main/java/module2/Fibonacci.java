@@ -11,7 +11,7 @@ public class Fibonacci {
     return calc_fib(n - 1) + calc_fib(n - 2);
   }
 
-  private static long fib(int n, long[] arr){
+  public static long fib(int n, long[] arr){
 
     if(n <= 1){
       return n;

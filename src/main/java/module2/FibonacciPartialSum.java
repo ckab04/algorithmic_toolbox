@@ -1,4 +1,4 @@
-//package module2;
+package module2;
 
 import java.math.BigInteger;
 import java.util.*;
