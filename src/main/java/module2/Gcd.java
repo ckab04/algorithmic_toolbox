@@ -2,7 +2,7 @@ package module2;
 
 import java.util.Scanner;
 
-public class GcdEfficient {
+public class Gcd {
 
     private static int gcd_naive(int a, int b) {
         int current_gcd = 1;
@@ -27,11 +27,11 @@ public class GcdEfficient {
 
 
     private static long gcdEfficient(long a, long b){
-        if ( a == 0){
-            return b;
+        if ( b == 0){
+            return a;
         }
 
-        return gcdEfficient(a % b, b);
+        return gcdEfficient(b, a % b);
     }
 
 

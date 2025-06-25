@@ -1,6 +1,5 @@
 package module2;
 
-import java.math.BigInteger;
 import java.util.*;
 
 public class FibonacciPartialSum {
@@ -23,24 +22,33 @@ public class FibonacciPartialSum {
         return sum % 10;
     }
 
-    private static long getFibonacciPartialSum(long from, long to){
-        BigInteger sum = BigInteger.ZERO;
-        BigInteger total = BigInteger.ZERO;
+    private static long getFibonacciMod10(long n){
 
-        long current = 0;
-        long next  = 1;
+        long k = n % 60;
 
-        for (long i = 0; i <= to; ++i) {
-            if (i >= from) {
-                total = sum.add(BigInteger.valueOf(current));
-            }
+        if(k <= 1){
+            return n;
+        }
+        long previous = 0;
+        long current = 1;
 
-            long new_current = next;
-            next = next + current;
-            current = new_current;
+        for(int i =2; i <= k; i++){
+            long temp = previous;
+            previous = current;
+            current = (temp + current) % 10;
         }
 
-        return total.mod(BigInteger.valueOf(10)).longValue() ;
+        return current;
+
+    }
+
+    private static long getFibonacciPartialSum(long from, long to){
+
+      long toResult = getFibonacciMod10(to + 2);
+      long fromResult = getFibonacciMod10(from + 1);
+
+      long finalResult = (toResult - fromResult + 10) % 10;
+      return finalResult;
 
     }
     
